@@ -165,7 +165,7 @@ public class PunchController : MonoBehaviour
         }
 
         //LEFT HOOK/////-1 on left to 1 on right//////////////////////////////////////////
-        if (Input.GetAxis("LeftStickHorizontal") >= 0.5 && ReadyForInput == true)
+        if (Input.GetAxis("LeftStickHorizontal") <= -0.5 && ReadyForInput == true)
         {
             if(isAxisInUse_LeftHook == false)
             {
@@ -180,14 +180,14 @@ public class PunchController : MonoBehaviour
             }
         }
 
-        if(Input.GetAxis("LeftStickHorizontal") < 0.5)
+        if(Input.GetAxis("LeftStickHorizontal") > -0.5)
         {
             isAxisInUse_LeftHook = false;
         }
 
 
         //RIGHT HOOOOK///////////////////////////////////////////////////////////////////////
-        if (Input.GetAxis("RightStickHorizontal") <= -0.5 && ReadyForInput == true)
+        if (Input.GetAxis("RightStickHorizontal") >= 0.5 && ReadyForInput == true)
         {
             if (isAxisInUse_RightHook == false)
             {
@@ -203,7 +203,7 @@ public class PunchController : MonoBehaviour
         }
 
 
-        if (Input.GetAxis("RightStickHorizontal") > -0.5)
+        if (Input.GetAxis("RightStickHorizontal") < 0.5)
         {
             isAxisInUse_RightHook = false;
         }
