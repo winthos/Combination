@@ -33,7 +33,7 @@ public class PunchSoundController : MonoBehaviour
 
     public void PlayJab()
     {
-        JabSource.pitch = Random.Range(0.9f, 1.2f);
+        JabSource.pitch = Random.Range(0.8f, 1.2f);
         //vibrate controller here
 
         JabSource.Play();
@@ -54,13 +54,13 @@ public class PunchSoundController : MonoBehaviour
     {
         //rumble here
         GamePad.SetVibration(0, 1.0f, 0.1f);
-        yield return new WaitForSeconds(0.12f);
+        yield return new WaitForSeconds(0.18f);
         GamePad.SetVibration(0, 0f, 0f);
     }
 
     public void PlayStraight()
     {
-        StraightSource.pitch = Random.Range(0.9f, 1.2f);
+        StraightSource.pitch = Random.Range(0.8f, 1.2f);
 
         StraightSource.Play();
         StartCoroutine("StraightRumble");
@@ -80,7 +80,7 @@ public class PunchSoundController : MonoBehaviour
     {
         //rumble here
         GamePad.SetVibration(0, 0.1f, 1.0f);
-        yield return new WaitForSeconds(0.18f);
+        yield return new WaitForSeconds(0.20f);
         GamePad.SetVibration(0, 0f, 0f);
     }
 

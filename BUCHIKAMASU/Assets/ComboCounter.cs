@@ -142,6 +142,7 @@ public class ComboCounter : MonoBehaviour
 
     IEnumerator WaitThenChange(int yes)
     {
+        yield return new WaitForSeconds(0.3f);
         ClearText.SetActive(true);
        // ComboClearSound.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1.1f);
