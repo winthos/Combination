@@ -376,18 +376,19 @@ public class ComboCounter : MonoBehaviour
                             Combo_3_2.GetComponent<Image>().color = Color.green;
                             if (PunchesThrown.Count >= 3)
                             {
-                                //print("there are 3 in the list now");
 
-                                Combo_3_1.GetComponent<Image>().color = Color.white;
-                                Combo_3_2.GetComponent<Image>().color = Color.white;
-                                StartCoroutine("WaitThenChange", 4);
-                                //ComboCard_1.SetActive(false);
-                                Combo3_Visible = false;
 
                                 if (PunchesThrown[2] == Combo3[2])
                                 {
                                     //cool! all punches in current list match up with Combo 1
                                     //print("Combo 3 done! DORA RA RA!");
+                                    //print("there are 3 in the list now");
+
+                                    Combo_3_1.GetComponent<Image>().color = Color.white;
+                                    Combo_3_2.GetComponent<Image>().color = Color.white;
+                                    StartCoroutine("WaitThenChange", 4);
+                                    //ComboCard_1.SetActive(false);
+                                    Combo3_Visible = false;
 
                                     //switch sound with CRAZY D
                                     PunchSoundCon.DORARA = true;
