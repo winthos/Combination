@@ -127,7 +127,7 @@ public class PunchController : MonoBehaviour
         //////////////CONTROLLER NONSENSE//////////////////
 
         //JAB!///////////////////////////////////////////////////////////////////////
-        if (Input.GetAxis("LeftStickVertical") <= -0.5 && ReadyForInput == true )
+        if ((Input.GetAxis("LeftStickVertical") <= -0.5 && ReadyForInput == true) || (Input.GetKeyDown(KeyCode.F) && ReadyForInput == true))
         {
             if (isAxisInUse == false)
             {
@@ -146,7 +146,7 @@ public class PunchController : MonoBehaviour
         }
 
         ////STRAIGHTO/////////////////////////////////////////////////////////////////
-        if (Input.GetAxis("RightStickVertical") <= -0.5 && ReadyForInput == true)
+        if ((Input.GetAxis("RightStickVertical") <= -0.5 && ReadyForInput == true) || (Input.GetKeyDown(KeyCode.J) && ReadyForInput == true))
         {
             if (isAxisInUse_Straight == false)
             {
@@ -165,7 +165,7 @@ public class PunchController : MonoBehaviour
         }
 
         //LEFT HOOK/////-1 on left to 1 on right//////////////////////////////////////////
-        if (Input.GetAxis("LeftStickHorizontal") <= -0.5 && ReadyForInput == true)
+        if ((Input.GetAxis("LeftStickHorizontal") <= -0.5 && ReadyForInput == true) || (Input.GetKeyDown(KeyCode.D) && ReadyForInput == true))
         {
             if(isAxisInUse_LeftHook == false)
             {
@@ -187,7 +187,7 @@ public class PunchController : MonoBehaviour
 
 
         //RIGHT HOOOOK///////////////////////////////////////////////////////////////////////
-        if (Input.GetAxis("RightStickHorizontal") >= 0.5 && ReadyForInput == true)
+        if ((Input.GetAxis("RightStickHorizontal") >= 0.5 && ReadyForInput == true) || (Input.GetKeyDown(KeyCode.K) && ReadyForInput == true))
         {
             if (isAxisInUse_RightHook == false)
             {
@@ -210,7 +210,7 @@ public class PunchController : MonoBehaviour
 
 
         ////LEFT UPPPAAAAAA/////////////////////////////////////////////////////////////
-        if (Input.GetAxis("LeftStickVertical") >= 0.5 && ReadyForInput == true)
+        if ((Input.GetAxis("LeftStickVertical") >= 0.5 && ReadyForInput == true) || (Input.GetKeyDown(KeyCode.S) && ReadyForInput == true))
         {
             if (isAxisInUse_LeftUpper == false)
             {
@@ -231,7 +231,7 @@ public class PunchController : MonoBehaviour
 
         ////RIGHT UPPPAAAAA////////////////////////////////////////////////////////////////////
 
-        if (Input.GetAxis("RightStickVertical") >= 0.5 && ReadyForInput == true)
+        if ((Input.GetAxis("RightStickVertical") >= 0.5 && ReadyForInput == true) || (Input.GetKeyDown(KeyCode.L) && ReadyForInput == true))
         {
             if (isAxisInUse_RightUpper == false)
             {
