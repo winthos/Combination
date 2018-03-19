@@ -20,6 +20,15 @@ public class PunchSoundController : MonoBehaviour
 
     public AudioSource RightUpperSource = null;
 
+    ///rumble bools
+
+    public bool Rumble_Jab = false;
+    public bool Rumble_Straight = false;
+    public bool Rumble_LeftHook = false;
+    public bool Rumble_RightHook = false;
+    public bool Rumble_LeftUpper = false;
+    public bool Rumble_RightUpper = false;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -53,9 +62,14 @@ public class PunchSoundController : MonoBehaviour
     IEnumerator JabRumble()
     {
         //rumble here
+        Rumble_Jab = true;
         GamePad.SetVibration(0, 1.0f, 0.1f);
         yield return new WaitForSeconds(0.18f);
-        GamePad.SetVibration(0, 0f, 0f);
+        Rumble_Jab = false;
+
+        //if no other jab is currently playing, then turn off, otherwise let other punches override
+        if(Rumble_Jab == false && Rumble_Straight == false && Rumble_RightUpper == false && Rumble_RightHook == false && Rumble_LeftUpper == false && Rumble_LeftHook == false)
+            GamePad.SetVibration(0, 0f, 0f);
     }
 
     public void PlayStraight()
@@ -79,9 +93,13 @@ public class PunchSoundController : MonoBehaviour
     IEnumerator StraightRumble()
     {
         //rumble here
+        Rumble_Straight = true;
         GamePad.SetVibration(0, 0.1f, 1.0f);
         yield return new WaitForSeconds(0.20f);
-        GamePad.SetVibration(0, 0f, 0f);
+        Rumble_Straight = false;
+
+        if (Rumble_Jab == false && Rumble_Straight == false && Rumble_RightUpper == false && Rumble_RightHook == false && Rumble_LeftUpper == false && Rumble_LeftHook == false)
+            GamePad.SetVibration(0, 0f, 0f);
     }
 
     public void PlayLeftHook()
@@ -102,9 +120,13 @@ public class PunchSoundController : MonoBehaviour
     IEnumerator LeftHookRumble()
     {
         //rumble here
+        Rumble_LeftHook = true;
         GamePad.SetVibration(0, 1.0f, 0.0f);
         yield return new WaitForSeconds(0.2f);
-        GamePad.SetVibration(0, 0f, 0f);
+        Rumble_LeftHook = false;
+
+        if (Rumble_Jab == false && Rumble_Straight == false && Rumble_RightUpper == false && Rumble_RightHook == false && Rumble_LeftUpper == false && Rumble_LeftHook == false)
+            GamePad.SetVibration(0, 0f, 0f);
     }
 
     public void PlayRightHook()
@@ -125,9 +147,13 @@ public class PunchSoundController : MonoBehaviour
     IEnumerator RightHookRumble()
     {
         //rumble here
+        Rumble_RightHook = true;
         GamePad.SetVibration(0, 0f, 1.0f);
         yield return new WaitForSeconds(0.25f);
-        GamePad.SetVibration(0, 0f, 0f);
+        Rumble_RightHook = false;
+
+        if (Rumble_Jab == false && Rumble_Straight == false && Rumble_RightUpper == false && Rumble_RightHook == false && Rumble_LeftUpper == false && Rumble_LeftHook == false)
+            GamePad.SetVibration(0, 0f, 0f);
     }
 
     public void PlayLeftUpper()
@@ -147,9 +173,13 @@ public class PunchSoundController : MonoBehaviour
     IEnumerator LeftUpperRumble()
     {
         //rumble here
+        Rumble_LeftUpper = true;
         GamePad.SetVibration(0, 1.0f, 0f);
         yield return new WaitForSeconds(0.5f);
-        GamePad.SetVibration(0, 0f, 0f);
+        Rumble_LeftUpper = false;
+
+        if (Rumble_Jab == false && Rumble_Straight == false && Rumble_RightUpper == false && Rumble_RightHook == false && Rumble_LeftUpper == false && Rumble_LeftHook == false)
+            GamePad.SetVibration(0, 0f, 0f);
     }
 
 
@@ -171,8 +201,13 @@ public class PunchSoundController : MonoBehaviour
     IEnumerator RightUpperRumble()
     {
         //rumble here
+        Rumble_RightUpper = true;
+        print("right upper");
         GamePad.SetVibration(0, 0f, 1.0f);
         yield return new WaitForSeconds(0.5f);
-        GamePad.SetVibration(0, 0f, 0f);
+        Rumble_RightUpper = false;
+
+        if (Rumble_Jab == false && Rumble_Straight == false && Rumble_RightUpper == false && Rumble_RightHook == false && Rumble_LeftUpper == false && Rumble_LeftHook == false)
+            GamePad.SetVibration(0, 0f, 0f);
     }
 }
