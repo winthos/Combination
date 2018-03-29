@@ -21868,7 +21868,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 82ef9e3f200b0b245b632667d1efbfe5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.11
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -40709,6 +40709,12 @@ MonoBehaviour:
   RightHookSource: {fileID: 1801103977}
   LeftUpperSource: {fileID: 648155859}
   RightUpperSource: {fileID: 464176248}
+  Rumble_Jab: 0
+  Rumble_Straight: 0
+  Rumble_LeftHook: 0
+  Rumble_RightHook: 0
+  Rumble_LeftUpper: 0
+  Rumble_RightUpper: 0
 --- !u!114 &2109987384
 MonoBehaviour:
   m_ObjectHideFlags: 0
