@@ -142,10 +142,15 @@ public class ComboCounter : MonoBehaviour
 
     IEnumerator WaitThenChange(int yes)
     {
+        //readyToCount = false;
+
         yield return new WaitForSeconds(0.3f);
         ClearText.SetActive(true);
        // ComboClearSound.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1.1f);
+        RemovePunchesFromList();
+        //here, ready to recieve input towards next combo
+        //readyToCount = true;
 
         //play bell here?
         BellSound.GetComponent<AudioSource>().Play();
@@ -198,7 +203,6 @@ public class ComboCounter : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-      
 
         //print(PunchesThrown.Count);
         ////CHECK FOR COMBO 1/////////////////////////////
@@ -267,6 +271,7 @@ public class ComboCounter : MonoBehaviour
 
         if (WhichComboAmICounting == 2)
         {
+            //print("on 2");
             if (Combo2_Visible == true)
             {
                 ComboCard_2.SetActive(true);
@@ -282,6 +287,7 @@ public class ComboCounter : MonoBehaviour
             {
                 if (PunchesThrown[0] == Combo2[0])
                 {
+                   // print("first of 2");
                     //first number should be green
                     Combo_2_1.GetComponent<Image>().color = Color.green;
                     
