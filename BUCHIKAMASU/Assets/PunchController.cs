@@ -272,7 +272,7 @@ public class PunchController : MonoBehaviour
 
     IEnumerator LeftUpperCountDown()
     {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.1f);
 
         LeftUpperAct1 = false;
         isAxisInUse_LeftUpper = false;
@@ -280,7 +280,7 @@ public class PunchController : MonoBehaviour
 
     IEnumerator RightUpperCountDown()
     {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.1f);
 
         RightUpperAct1 = false;
         isAxisInUse_RightUpper = false;
