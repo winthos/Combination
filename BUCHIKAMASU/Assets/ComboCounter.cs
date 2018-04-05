@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ComboCounter : MonoBehaviour 
 {
 
+    public AudioSource[] Sounds;
     //Ok here are the combos//
 
     //Combo 1:  1 - 2
@@ -124,6 +125,22 @@ public class ComboCounter : MonoBehaviour
         PunchSoundCon = gameObject.GetComponent<PunchSoundController>();
 	}
 
+    public void LowerPitch()
+    {
+        for(int i = 0; i < Sounds.Length; i++)
+        {
+            Sounds[i].pitch = 0.8f;
+        }
+    }
+
+    public void RaisePitch()
+    {
+        for (int i = 0; i < Sounds.Length; i++)
+        {
+            Sounds[i].pitch = 1.0f;
+        }
+    }
+
     public void AddToPunchesThrown(int punch)
     {
         if(this.enabled == false)
@@ -143,12 +160,21 @@ public class ComboCounter : MonoBehaviour
     IEnumerator WaitThenChange(int yes)
     {
         //readyToCount = false;
-
-        yield return new WaitForSeconds(0.3f);
+      
+        yield return new WaitForSecondsRealtime(0.3f);
         ClearText.SetActive(true);
-       // ComboClearSound.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(1.1f);
+        //Time.timeScale = 0.3f;
+        //yield return new WaitForSecondsRealtime(0.2f);
+        this.GetComponent<Animator>().SetTrigger("Shake");
+        //slow down sounds
+       // LowerPitch();
+        // ComboClearSound.GetComponent<AudioSource>().Play();
+        yield return new WaitForSecondsRealtime(1.1f);
+        //Time.timeScale = 1.0f;
+        //sounds back up to speed
+        //RaisePitch();
         RemovePunchesFromList();
+
         //here, ready to recieve input towards next combo
         //readyToCount = true;
 

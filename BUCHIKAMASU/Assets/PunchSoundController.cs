@@ -63,8 +63,8 @@ public class PunchSoundController : MonoBehaviour
     {
         //rumble here
         Rumble_Jab = true;
-        GamePad.SetVibration(0, 1.0f, 0.1f);
-        yield return new WaitForSeconds(0.10f);
+        GamePad.SetVibration(0, 1.0f, 0.0f);
+        yield return new WaitForSeconds(0.17f);
         Rumble_Jab = false;
 
         //if no other jab is currently playing, then turn off, otherwise let other punches override
@@ -94,8 +94,8 @@ public class PunchSoundController : MonoBehaviour
     {
         //rumble here
         Rumble_Straight = true;
-        GamePad.SetVibration(0, 0.1f, 1.0f);
-        yield return new WaitForSeconds(0.15f);
+        GamePad.SetVibration(0, 0.0f, 1.0f);
+        yield return new WaitForSeconds(0.18f);
         Rumble_Straight = false;
 
         if (Rumble_Jab == false && Rumble_Straight == false && Rumble_RightUpper == false && Rumble_RightHook == false && Rumble_LeftUpper == false && Rumble_LeftHook == false)
@@ -122,7 +122,7 @@ public class PunchSoundController : MonoBehaviour
         //rumble here
         Rumble_LeftHook = true;
         GamePad.SetVibration(0, 1.0f, 0.0f);
-        yield return new WaitForSeconds(0.18f);
+        yield return new WaitForSeconds(0.2f);
         Rumble_LeftHook = false;
 
         if (Rumble_Jab == false && Rumble_Straight == false && Rumble_RightUpper == false && Rumble_RightHook == false && Rumble_LeftUpper == false && Rumble_LeftHook == false)
@@ -149,7 +149,7 @@ public class PunchSoundController : MonoBehaviour
         //rumble here
         Rumble_RightHook = true;
         GamePad.SetVibration(0, 0f, 1.0f);
-        yield return new WaitForSeconds(0.18f);
+        yield return new WaitForSeconds(0.2f);
         Rumble_RightHook = false;
 
         if (Rumble_Jab == false && Rumble_Straight == false && Rumble_RightUpper == false && Rumble_RightHook == false && Rumble_LeftUpper == false && Rumble_LeftHook == false)
